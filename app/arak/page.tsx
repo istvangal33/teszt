@@ -1,6 +1,6 @@
-"use client";
 
 import React from "react";
+import Link from "next/link";
 
 const BRAND_PRIMARY = "var(--color-brand-primary, #004A6D)";
 const BRAND_ACCENT = "var(--color-brand-accent, #EC7007)";
@@ -43,6 +43,8 @@ const PASSES: PriceItem[] = [
 
 
 function PriceSchema() {
+  const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
+
   const businessWithPricesSchema = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "MedicalBusiness"],
@@ -50,12 +52,12 @@ function PriceSchema() {
     "description": "Szakszerű gyógytorna és fizioterápia Győrben. Átlátható árazással, professzionális kezelésekkel.",
     "url": "https://restartphysio.hu",
     "image": "https://restartphysio.hu/group_core1.jpg",
-    "telephone": "+36-30-819-8449",
+    "telephone": "+36308198449",
     "email": "restart.gyor@gmail.com",
     
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Máté Mária u. 4b",
+      "streetAddress": "Máté Mária u. 4/B",
       "addressLocality": "Győr",
       "addressRegion": "Győr-Moson-Sopron",
       "postalCode": "9028",
@@ -64,13 +66,12 @@ function PriceSchema() {
     
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 47.6596433009664,
-      "longitude": 17.659999426322084
+      "latitude": 47.6596433,
+      "longitude": 17.6599994
     },
     
     "openingHours": [
-      "Mo-Fr 08:00-18:00",
-      "Sa 09:00-14:00"
+      "Mo-Fr 08:00-18:00"
     ],
     
     "priceRange": "7000-17000 HUF",
@@ -91,23 +92,17 @@ function PriceSchema() {
       "url": "https://restartphysio.hu/bemutatkozas"
     },
     
-    "employee": {
-      "@type": "Person",
-      "name": "Forrás Fernanda",
-      "jobTitle": "Gyógytornász-fizioterapeuta"
-    },
-    
     // ✅ ÁRAK STRUCTURED DATA
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "ReStart Physio Árlista",
-      "itemListElement": [...SERVICES, ...PASSES, ...RENT].map((service, index) => ({
+      "itemListElement": [...SERVICES, ...PASSES, ...RENT].map((service) => ({
         "@type": "Offer",
         "name": service.name,
         "description": `${service.duration ? `${service.duration} időtartam` : 'Professzionális kezelés'}`,
         "price": service.price,
         "priceCurrency": "HUF",
-        "priceValidUntil": "2025-12-31",
+        "priceValidUntil": priceValidUntil,
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "MedicalBusiness",
@@ -140,6 +135,19 @@ export default function PriceList() {
   return (
     <div className="min-h-screen bg-white">
       <PriceSchema />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Főoldal", "item": "https://restartphysio.hu" },
+              { "@type": "ListItem", "position": 2, "name": "Árak", "item": "https://restartphysio.hu/arak" }
+            ]
+          })
+        }}
+      />
 
       <section
         aria-labelledby="price-list-heading"
@@ -161,23 +169,54 @@ export default function PriceList() {
                 className="flex-1 h-px"
                 style={{ backgroundColor: "color-mix(in srgb, " + BRAND_PRIMARY + " 25%, #e3ded7)" } as React.CSSProperties}
               />
-              <h1
-                id="price-list-heading"
-                className="mx-6 text-center tracking-[0.2em] text-[0.75rem] sm:text-sm font-medium text-[#001219]"
-              >
+              <div className="mx-6 text-center tracking-[0.2em] text-[0.75rem] sm:text-sm font-medium text-[#001219]">
                 R E S T A R T&nbsp;&nbsp;P H Y S I O
-              </h1>
+              </div>
               <span
                 className="flex-1 h-px"
                 style={{ backgroundColor: "color-mix(in srgb, " + BRAND_PRIMARY + " 25%, #e3ded7)" } as React.CSSProperties}
               />
             </div>
+            <h1
+              id="price-list-heading"
+              className="mt-4 text-center text-2xl sm:text-3xl font-bold"
+              style={{ color: BRAND_PRIMARY } as React.CSSProperties}
+            >
+              Gyógytorna árak és kezelési díjak Győrben
+            </h1>
             <h2
-              className="mt-3 text-[0.95rem] sm:text-base tracking-[0.2em] font-semibold"
+              className="mt-2 text-[0.95rem] sm:text-base tracking-[0.2em] font-semibold"
               style={{ color: BRAND_ACCENT } as React.CSSProperties}
             >
               Á R L I S T A
             </h2>
+          </div>
+
+          <div className="mb-8 rounded-xl bg-[#F6FAFC] border p-5 sm:p-6" style={{ borderColor: "color-mix(in srgb, " + BRAND_PRIMARY + " 18%, #dfe6ea)" } as React.CSSProperties}>
+            <p className="text-sm sm:text-base leading-relaxed text-[#17303b] mb-4">
+              Ezen az oldalon a ReStart Physio gyógytorna és fizioterápia szolgáltatásainak aktuális árait találja.
+              Az árlista célja, hogy már időpontfoglalás előtt átlátható képet kapjon arról, milyen kezelések érhetők el,
+              mekkora időtartammal és milyen díjjal számolhat Győrben.
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed text-[#17303b] mb-4">
+              A kezelési díj elsődlegesen az időtartamtól, a panasz típusától és a szükséges terápiás elemek kombinációjától
+              függ. Az első találkozás alkalmával állapotfelmérés történik, ez alapján készül egy személyre szabott kezelési
+              terv, amely figyelembe veszi a fájdalom jellegét, a mozgásbeszűkülést, a terhelhetőséget és a reális célokat.
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed text-[#17303b] mb-4">
+              Leggyakoribb területeink: derékfájás és nyakfájás kezelése, gerincpanaszok rehabilitációja,
+              sportrehabilitáció, műtét utáni visszaépítés, állkapocsízületi terápia és Schroth terápia.
+              Rendszeres kezelés esetén bérletkonstrukciók is elérhetők, amelyek kedvezőbb ár-érték arányt biztosítanak.
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed text-[#17303b]">
+              Ha szeretné tudni, melyik szolgáltatás illik legjobban az Ön panaszához, tekintse meg{" "}
+              <Link href="/szolgaltatasok" className="font-semibold underline hover:text-[#EC7007] transition-colors duration-200">
+                gyógytorna és fizioterápia szolgáltatásainkat
+              </Link>, vagy lépjen tovább az{" "}
+              <Link href="/elerhetoseg" className="font-semibold underline hover:text-[#EC7007] transition-colors duration-200">
+                elérhetőségek és időpontfoglalás oldalra
+              </Link>.
+            </p>
           </div>
 
           {/* Szolgáltatások */}

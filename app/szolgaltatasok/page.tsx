@@ -148,18 +148,6 @@ const SERVICE_DESCRIPTIONS: { [key: string]: string } = {
   "Gerincferdülés - Schroth terápia": "A <strong>Schroth</strong> terápia egy speciális, háromdimenziós mozgásterápia, amely a gerincferdülés (scoliosis) és más tartáshibák célzott kezelésére szolgál. Ez a terápia az egyik leghatékonyabb konzervatív kezelési formának számít a gerincdeformitások korrigálásában. A terápia során a páciens megtanulja a saját testtartási mintáinak tudatos korrekcióját, speciális légzőgyakorlatokkal és izomaktiválással kombinálva. A kezelés célja, hogy javítsuk a gerinc helyzetét, csökkentsük az aszimmetriát, enyhítsük a fájdalmat és megelőzzük a ferdülés romlását."
 };
 
-// SERVICE MAPPING - SCROLLTILES -> GRID MAPPING
-const SERVICE_MAPPING: { [key: string]: string } = {
-  "Sport rehabilitáció és műtétek utáni rehabilitáció": "Egyéni gyógytorna/rehabilitáció",
-  "Állkapocs ízületi terápia": "TMI (Állkapocs ízületi) terápia",
-  "Manuál fascia kezelések": "Lágy rész manuál terápia (FDM kezelések)",
-  "Gerincpanaszok kezelése": "Gerincpanaszok kezelése",
-  "BEMER terápia": "BEMER terápia",
-  "Dinamikus tape": "Dinamikus tape",
-  "Egyéni és csoportos foglalkozások": "Csoportos gerinc core edzés",
-  "Gerincferdülés - Schroth terápia": "Gerincferdülés - Schroth terápia"
-};
-
 export default function ServicesSection() {
   const [expandedServices, setExpandedServices] = useState<Set<string>>(new Set());
 
@@ -217,6 +205,19 @@ useEffect(() => {
   return (
     <>
       <ServiceSchema />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Főoldal", "item": "https://restartphysio.hu" },
+              { "@type": "ListItem", "position": 2, "name": "Szolgáltatások", "item": "https://restartphysio.hu/szolgaltatasok" }
+            ]
+          })
+        }}
+      />
       {/* HERO SECTION */}
       <section className="relative bg-gradient-to-br from-[#004A6D]/5 via-white to-[#EC7007]/5 py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-x-0 bottom-0">
@@ -233,10 +234,15 @@ useEffect(() => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-extrabold text-[#004A6D] mb-4">
-              Szolgáltatásaink
+              Gyógytorna és fizioterápiás szolgáltatások Győrben
             </h1>
             <p className="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Komplex fizioterápiás megoldások minden igényre – egyénre szabott kezelésekkel
+              Egyénre szabott kezelések derékfájás, nyakfájás, gerincpanaszok, sportsérülések,
+              műtét utáni rehabilitáció és állkapocsízületi panaszok esetén.
+            </p>
+            <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto mt-4 leading-relaxed">
+              Minden szolgáltatásnál röviden összefoglaltuk, kinek szól, milyen problémára jó,
+              és hogyan zajlik a kezelés.
             </p>
           </div>
         </div>
@@ -351,13 +357,19 @@ useEffect(() => {
                 Szeretne időpontot foglalni?
               </h4>
               <p className="text-gray-600 mb-6">
-                Ismerje meg{" "}
+                Nézze meg{" "}
+                <Link 
+                  href="/arak" 
+                  className="text-[#004A6D] font-semibold underline hover:text-[#EC7007] transition-colors duration-200"
+                >
+                  gyógytorna árainkat
+                </Link>, ismerje meg{" "}
                 <Link 
                   href="/bemutatkozas" 
                   className="text-[#004A6D] font-semibold underline hover:text-[#EC7007] transition-colors duration-200"
                 >
-                  tapasztalt fizioterapeutánkat
-                </Link>, vagy vegye fel velünk a kapcsolatot!
+                  szakmai hátterünket
+                </Link>, vagy kérjen időpontot közvetlenül.
               </p>
               <a 
                 href="/elerhetoseg#contact"

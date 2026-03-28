@@ -6,13 +6,36 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://restartphysio.hu'),
+  applicationName: 'ReStart Physio',
   
   title: {
     template: '%s | ReStart Physio - Gyógytorna Győr',
     default: 'ReStart Physio - Gyógytorna és Fizioterápia Győrben | Forrás Fernanda'
   },
+  keywords: [
+    'gyógytorna Győr',
+    'fizioterápia Győr',
+    'sportrehabilitáció Győr',
+    'manuálterápia Győr',
+    'gerincpanaszok kezelése',
+    'porckorongsérv kezelés Győr',
+    'skoliózis kezelés Győr',
+    'Schroth terápia',
+    'TMI terápia állkapocs',
+    'FDM kezelés',
+    'BEMER terápia',
+    'fizioterapeuta Győr',
+    'műtét utáni rehabilitáció Győr',
+    'mozgásszervi problémák kezelése',
+    'gerébstabilizáció',
+    'időpontfoglalás gyógytornász Győr'
+  ],
   description: "Szakszerű gyógytorna, fizioterápia és sportrehabilitáció Győrben. Közel 10 év tapasztalat gerincpanaszok, sportsérülések és mozgásszervi problémák kezelésében.",
   authors: [{ name: "Forrás Fernanda" }],
+  creator: 'Forrás Fernanda',
+  publisher: 'ReStart Physio',
+  category: 'health',
+  referrer: 'origin-when-cross-origin',
   
   openGraph: {
     title: "ReStart Physio - Ahol a mozgás újraindul",
@@ -53,6 +76,9 @@ export const metadata: Metadata = {
   
   alternates: {
     canonical: "https://restartphysio.hu",
+    languages: {
+      'hu-HU': 'https://restartphysio.hu',
+    },
   },
   
   robots: {
@@ -83,7 +109,17 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "LocalBusiness",
+                  "@type": "WebSite",
+                  "@id": "https://restartphysio.hu/#website",
+                  "url": "https://restartphysio.hu",
+                  "name": "ReStart Physio",
+                  "inLanguage": "hu-HU",
+                  "publisher": {
+                    "@id": "https://restartphysio.hu/#organization"
+                  }
+                },
+                {
+                  "@type": "MedicalBusiness",
                   "@id": "https://restartphysio.hu/#organization",
                   "name": "ReStart Physio",
                   "url": "https://restartphysio.hu",
@@ -101,13 +137,14 @@ export default function RootLayout({
                     "@type": "PostalAddress",
                     "streetAddress": "Máté Mária u. 4/B",
                     "addressLocality": "Győr",
+                    "addressRegion": "Győr-Moson-Sopron",
                     "postalCode": "9028",
                     "addressCountry": "HU"
                   },
                   "geo": {
                     "@type": "GeoCoordinates",
-                    "latitude": 47.6782,
-                    "longitude": 17.6354
+                    "latitude": 47.6596433,
+                    "longitude": 17.6599994
                   },
                   "openingHoursSpecification": [
                     {
@@ -117,21 +154,31 @@ export default function RootLayout({
                       "closes": "18:00"
                     }
                   ],
-                  "priceRange": "$$",
+                  "priceRange": "5000–17000 HUF",
+                  "currenciesAccepted": "HUF",
+                  "areaServed": [
+                    { "@type": "City", "name": "Győr" },
+                    { "@type": "AdministrativeArea", "name": "Győr-Moson-Sopron megye" }
+                  ],
+                  "founder": { "@id": "https://restartphysio.hu/#person" },
                   "sameAs": [
-                    "https://www.facebook.com/Restartphysiogyor",
-                    "https://www.instagram.com/restartphysiogyor"
+                    "https://www.facebook.com/Restartphysiogyor/",
+                    "https://www.instagram.com/restartphysiogyor/"
                   ]
                 },
                 {
                   "@type": "Person",
                   "@id": "https://restartphysio.hu/#person",
                   "name": "Forrás Fernanda",
-                  "jobTitle": "Fizioterapeuta",
-                  "worksFor": {
-                    "@id": "https://restartphysio.hu/#organization"
-                  },
-                  "url": "https://restartphysio.hu/bemutatkozas"
+                  "jobTitle": "Gyógytornász-fizioterapeuta",
+                  "image": "https://restartphysio.hu/main.jpg",
+                  "url": "https://restartphysio.hu/bemutatkozas",
+                  "worksFor": { "@id": "https://restartphysio.hu/#organization" },
+                  "knowsAbout": [
+                    "Gyógytorna", "Fizioterápia", "Sportrehabilitáció",
+                    "Manuálterápia", "Gerincpanaszok kezelése",
+                    "TMI terápia", "FDM kezelés", "Schroth terápia"
+                  ]
                 }
               ]
             })

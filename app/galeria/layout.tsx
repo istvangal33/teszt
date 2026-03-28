@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Galéria | ReStart Physio - Rendelő & Kezelések Fotói Győr',
-  description: 'ReStart Physio galéria: modern rendelő, BEMER terápia, sportrehabilitáció, gerincstabilizáció, manuális kezelések és csoportos edzések képekben. Győr, Máté Mária u.',
+  title: 'Gyógytorna rendelő galéria Győr | ReStart Physio',
+  description: 'Gyógytorna rendelő és fizioterápiás kezelések képei Győrben: modern kezelőterek, rehabilitációs eszközök, sportrehabilitáció és manuális terápiák.',
   keywords: 'gyógytorna rendelő Győr képek, fizioterapeuta galéria, BEMER terápia fotók, sportrehabilitáció Győr, gerincstabilizáció képek, core tréning galéria',
   
   openGraph: {
-    title: 'Galéria | ReStart Physio Győr',
-    description: 'Modern rendelőnk és professzionális kezeléseink képekben.',
+    title: 'Gyógytorna rendelő galéria Győr | ReStart Physio',
+    description: 'Nézze meg rendelőnket és kezeléseinket képekben: gyógytorna, fizioterápia és rehabilitáció Győrben.',
     images: [
       {
         url: 'https://restartphysio.hu/rendelo1.jpeg', // ✅ Teljes URL
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Galéria | ReStart Physio',
-    description: 'Modern rendelőnk és professzionális kezeléseink képekben.',
+    title: 'Gyógytorna rendelő galéria Győr | ReStart Physio',
+    description: 'Rendelő és kezelések képekben Győrben.',
     images: ['https://restartphysio.hu/rendelo2.jpeg'], // ✅ Teljes URL
   },
 

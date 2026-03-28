@@ -14,11 +14,13 @@ function PersonSchema() {
     "url": "https://restartphysio.hu/bemutatkozas",
     "description": "Okleveles gyógytornász-fizioterapeuta, a ReStart Physio alapítója és vezető szakembere. Több éves tapasztalattal a sportrehabilitáció és mozgásszervi terápiák területén.",
     "worksFor": {
-      "@type": "MedicalBusiness", 
-      "name": "ReStart Physio",
-      "url": "https://restartphysio.hu"
+      "@id": "https://restartphysio.hu/#organization"
     },
-    "alumniOf": "Szegedi Tudományegyetem",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Szegedi Tudományegyetem",
+      "url": "https://www.u-szeged.hu"
+    },
     "hasCredential": [
       {
         "@type": "EducationalOccupationalCredential",
@@ -42,12 +44,25 @@ function PersonSchema() {
 }
 
 export const metadata: Metadata = {
-  title: 'Forrás Fernanda | Gyógytornász-fizioterapeuta – ReStart Physio',
-  description: 'Forrás Fernanda gyógytornász-fizioterapeuta a ReStart Physio alapítója. Szakterületei közé tartozik a sportrehabilitáció, gerincstabilizáció, TMI-terápia, FDM-kezelés, BEMER-terápia, core tréning és Schroth terápia. Célja, hogy páciensei fájdalommentesen, biztonságosan térhessenek vissza a mozgáshoz.',
+  title: 'Forrás Fernanda gyógytornász-fizioterapeuta | ReStart Physio Győr',
+  description: 'Forrás Fernanda gyógytornász-fizioterapeuta bemutatkozása Győrben. Több éves tapasztalat sportrehabilitáció, gerincpanaszok kezelése, TMJ terápia és műtét utáni rehabilitáció területén.',
+  alternates: {
+    canonical: 'https://restartphysio.hu/bemutatkozas',
+  },
   openGraph: {
-    title: 'Forrás Fernanda | Gyógytornász-fizioterapeuta – ReStart Physio',
+    title: 'Forrás Fernanda gyógytornász-fizioterapeuta | ReStart Physio Győr',
     description: 'Bemutatkozik Forrás Fernanda, a ReStart Physio szakértő fizioterapeutája, több éves tapasztalattal a sport- és mozgásszervi rehabilitáció területén.',
-    images: ['/main.jpg'],
+    url: 'https://restartphysio.hu/bemutatkozas',
+    siteName: 'ReStart Physio',
+    locale: 'hu_HU',
+    type: 'profile',
+    images: ['https://restartphysio.hu/main.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Forrás Fernanda gyógytornász-fizioterapeuta | ReStart Physio Győr',
+    description: 'Ismerje meg Forrás Fernandát, a ReStart Physio szakértő fizioterapeutáját.',
+    images: ['https://restartphysio.hu/main.jpg'],
   },
 };
 
@@ -56,6 +71,19 @@ export default function Bemutatkozo() {
   return (
     <>
       <PersonSchema />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Főoldal", "item": "https://restartphysio.hu" },
+              { "@type": "ListItem", "position": 2, "name": "Bemutatkozás", "item": "https://restartphysio.hu/bemutatkozas" }
+            ]
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#004A6D]/5 via-white to-[#EC7007]/5 py-20 md:py-28 overflow-hidden">
         {/* Dekoratív hullámos alj */}
@@ -76,7 +104,18 @@ export default function Bemutatkozo() {
               Bemutatkozás
             </h1>
             <p className="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Közel 10 éves szakmai tapasztalattal segítem pácienseimet a gyógyulás útján
+              Forrás Fernanda gyógytornász-fizioterapeuta vagyok, és Győrben segítem pácienseimet a tartós javulásban.
+            </p>
+            <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto mt-4 leading-relaxed">
+              Fő területeim: sportrehabilitáció, gerincpanaszok kezelése, állkapocsízületi terápia,
+              műtét utáni rehabilitáció és mozgásszervi fájdalmak kezelése. Nézze meg{" "}
+              <Link href="/szolgaltatasok" className="font-semibold underline hover:text-[#EC7007] transition-colors duration-200">
+                szolgáltatásainkat
+              </Link>{" "}
+              vagy tekintse át{" "}
+              <Link href="/arak" className="font-semibold underline hover:text-[#EC7007] transition-colors duration-200">
+                gyógytorna árainkat
+              </Link>.
             </p>
           </div>
         </div>

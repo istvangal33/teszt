@@ -2,16 +2,15 @@ import type { Metadata } from 'next';
 import ContactSection from '@/components/ContactSection';
 
 const BRAND_PRIMARY = 'var(--color-brand-primary, #004A6D)';
-const BRAND_ACCENT = 'var(--color-brand-accent, #EC7007)';
 
 export const metadata: Metadata = {
-  title: 'Elérhetőség & Kapcsolat | ReStart Physio - Győr, Máté Mária u. 4/B',
-  description: 'ReStart Physio gyógytorna rendelő elérhetősége Győrben: +36 30 819 8449, restart.gyor@gmail.com. Máté Mária u. 4/B. Nyitvatartás, parkolás, tömegközlekedés, kapcsolatfelvételi űrlap.', 
+  title: 'Gyógytorna rendelő Győr - Elérhetőség | ReStart Physio',
+  description: 'Gyógytorna rendelő elérhetősége Győrben: 9028 Győr, Máté Mária u. 4/B. Telefon: +36 30 819 8449. Időpontfoglalás, megközelítés, parkolás és kapcsolatfelvétel.', 
   keywords: 'ReStart Physio elérhetőség, gyógytorna Győr cím, fizioterapeuta Győr telefon, Máté Mária utca, időpontfoglalás, kapcsolat gyógytornász',
   
   openGraph: {
-    title: 'Kapcsolat | ReStart Physio Győr',
-    description: 'Vegye fel velünk a kapcsolatot! Máté Mária u. 4/B, Győr. Telefon: +36 30 819 8449',
+    title: 'Gyógytorna rendelő Győr - Elérhetőség | ReStart Physio',
+    description: 'Rendelőnk Győrben, a Máté Mária utcában található. Időpontfoglalás telefonon vagy online kapcsolatfelvétellel.',
     images: [
       {
         url: 'https://restartphysio.hu/group_core1.jpg',
@@ -28,8 +27,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Kapcsolat | ReStart Physio Győr',
-    description: 'Vegye fel velünk a kapcsolatot! Máté Mária u. 4/B, Győr.',
+    title: 'Gyógytorna rendelő Győr - Elérhetőség | ReStart Physio',
+    description: 'Időpontfoglalás, elérhetőségek és rendelő adataink Győrben.',
     images: ['https://restartphysio.hu/group_core1.jpg'],
   },
 
@@ -60,7 +59,7 @@ function ContactSchema() {
     "url": "https://restartphysio.hu",
     "image": "https://restartphysio.hu/group_core1.jpg",
     
-    "telephone": "+36-30-819-8449",
+    "telephone": "+36308198449",
     "email": "restart.gyor@gmail.com",
     
     "address": {
@@ -74,8 +73,8 @@ function ContactSchema() {
     
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 47.6596433009664,
-      "longitude": 17.659999426322084
+      "latitude": 47.6596433,
+      "longitude": 17.6599994
     },
     
     "openingHoursSpecification": [
@@ -117,7 +116,7 @@ function ContactSchema() {
       "telephone": "+36-30-819-8449",
       "contactType": "customer service",
       "email": "restart.gyor@gmail.com",
-      "availableLanguage": "Hungarian"
+      "availableLanguage": "hu-HU"
     },
 
     // ✅ EXTRA SEO FEATURES
@@ -139,13 +138,7 @@ function ContactSchema() {
       "FDM kezelés",
       "Schroth terápia",
       "Manuálterápia"
-    ],
-
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "1"
-    }
+    ]
   };
 
   return (
@@ -162,6 +155,19 @@ export default function Elerhetoseg() {
   return (
     <>
       <ContactSchema />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Főoldal", "item": "https://restartphysio.hu" },
+              { "@type": "ListItem", "position": 2, "name": "Elérhetőség", "item": "https://restartphysio.hu/elerhetoseg" }
+            ]
+          })
+        }}
+      />
       
       {/* Hero – visszafogott brand hátterekkel */}
       <section className="relative bg-gradient-to-br from-[#004A6D]/5 via-white to-[#EC7007]/5 py-20 md:py-28 overflow-hidden">
@@ -179,10 +185,19 @@ export default function Elerhetoseg() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-extrabold text-[#004A6D] mb-4">
-              Vegye fel velünk a kapcsolatot
+              Gyógytorna rendelő elérhetősége Győrben
             </h1>
             <p className="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Válaszolunk minden kérdésére és segítünk időpontot foglalni
+              Időpontfoglalás, pontos cím, megközelítés és minden fontos információ egy helyen.
+            </p>
+            <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto mt-4 leading-relaxed">
+              A rendelő a 9028 Győr, Máté Mária u. 4/B címen található. A belváros, Nádorváros és Marcalváros felől is
+              könnyen megközelíthető autóval és tömegközlekedéssel. Ha bizonytalan, melyik kezelésre van szüksége,
+              nézze meg{" "}
+              <a href="/szolgaltatasok" className="font-semibold underline hover:text-[#EC7007] transition-colors duration-200">
+                gyógytorna és fizioterápia szolgáltatásainkat
+              </a>{" "}
+              vagy kérjen közvetlenül időpontot.
             </p>
           </div>
         </div>

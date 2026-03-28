@@ -6,14 +6,15 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin/', '/api/', '/private/'],
+        disallow: ['/admin/', '/api/', '/private/', '/_next/'],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: '/admin/',
+        disallow: ['/admin/', '/api/', '/private/'],
       }
     ],
+    host: 'https://restartphysio.hu',
     sitemap: 'https://restartphysio.hu/sitemap.xml',
   };
 }

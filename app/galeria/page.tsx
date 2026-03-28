@@ -12,7 +12,7 @@ interface GalleryImage {
   title: string;
 }
 
-function GallerySchema({ images }: { images: GalleryImage[] }) {
+function GallerySchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
@@ -130,7 +130,20 @@ export default function Galeria() {
   return (
     <>
       {/* ✅ STRUCTURED DATA HOZZÁADVA */}
-      <GallerySchema images={galleryImages} />
+      <GallerySchema />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Főoldal", "item": "https://restartphysio.hu" },
+              { "@type": "ListItem", "position": 2, "name": "Galéria", "item": "https://restartphysio.hu/galeria" }
+            ]
+          })
+        }}
+      />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#004A6D]/5 via-white to-[#EC7007]/5 py-20 md:py-28 overflow-hidden">
@@ -152,7 +165,7 @@ export default function Galeria() {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-extrabold text-[#004A6D] mb-4"
             >
-              Galéria
+              Gyógytorna rendelő és kezelések galériája Győrben
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -160,7 +173,16 @@ export default function Galeria() {
               transition={{ delay: 0.1 }}
               className="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             >
-              Tekintse meg modern rendelőnket és professzionális kezeléseinket
+              Tekintse meg rendelőnket, rehabilitációs tereinket és gyógytorna kezeléseinket képekben.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto mt-4 leading-relaxed"
+            >
+              A galériában valós képeket talál a győri rendelőről, a kezelési környezetről és a leggyakoribb
+              fizioterápiás, sportrehabilitációs, illetve manuális terápiás folyamatokról.
             </motion.p>
           </div>
         </div>
