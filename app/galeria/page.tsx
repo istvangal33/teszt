@@ -38,52 +38,52 @@ export default function Galeria() {
   // ✅ CSAK ALT TEXTEK JAVÍTÁSA - FÁJLNEVEK VÁLTOZATLANOK!
   const galleryImages: GalleryImage[] = [
     // RENDELŐ KÉPEK
-    { id: 1, src: '/rendelo1.jpeg', alt: 'ReStart Physio gyógytorna rendelő Győr – modern kezelőhelyiség gyönyörű kilátással', category: 'rendelő', title: '' },
-    { id: 2, src: '/rendelo2.jpeg', alt: 'Gyógytorna és fizioterápia eszközök Győrben – ReStart Physio kezelőszoba modern eszközökkel felszerelve', category: 'rendelő', title: '' },
-    { id: 3, src: '/rendelo3.jpeg', alt: 'A ReStart Physio győri gyógytorna rendelő váróterme – belépéskor modern, tiszta és barátságos környezet fogad', category: 'rendelő', title: '' },
-    { id: 4, src: '/rendelo4.jpeg', alt: 'Tágas rehabilitációs terem jól felszerelt edzőgépekkel', category: 'rendelő', title: '' },
-    { id: 5, src: '/rendelo5.jpeg', alt: 'A ReStart Physio győri gyógytorna rendelő váróterme – belépéskor modern, tiszta és barátságos környezet fogad, kényelmes székekkel és szakmai oklevelekkel a falon.', category: 'rendelő', title: '' },
-    { id: 6, src: '/rendelo6.jpeg', alt: 'A ReStart Physio győri gyógytorna rendelő kezelőhelyisége', category: 'rendelő', title: '' },
-    { id: 7, src: '/rendelo7.jpeg', alt: 'A ReStart Physio győri gyógytorna rendelő kezelőhelyisége csodás kilátással', category: 'rendelő', title: '' },
-    { id: 8, src: '/rendelo8.jpeg', alt: 'Gyógytorna és fizioterápia eszközök Győrben – ReStart Physio kezelőterem tornaszőnyegekkel és bordásfallal', category: 'rendelő', title: '' },
-    { id: 9, src: '/rendelo9.jpeg', alt: 'ReStart Physio gyógytorna rendelő Győrben – világos, tágas tornaterem szobabiciklivel és rehabilitációs eszközökkel, kilátással a zöld környezetre.', category: 'rendelő', title: '' },
+    { id: 1, src: '/rendelo1.jpeg', alt: 'ReStart Physio gyógytorna rendelő Győr – modern kezelőhelyiség', category: 'rendelő', title: '' },
+    { id: 2, src: '/rendelo2.jpeg', alt: 'Gyógytorna eszközök a ReStart Physio kezelőszobában Győrben', category: 'rendelő', title: '' },
+    { id: 3, src: '/rendelo3.jpeg', alt: 'ReStart Physio győri rendelő váróterme – tiszta, barátságos környezet', category: 'rendelő', title: '' },
+    { id: 4, src: '/rendelo4.jpeg', alt: 'Tágas rehabilitációs terem felszerelt edzőgépekkel', category: 'rendelő', title: '' },
+    { id: 5, src: '/rendelo5.jpeg', alt: 'ReStart Physio rendelő váróterme székekkel és oklevelekkel', category: 'rendelő', title: '' },
+    { id: 6, src: '/rendelo6.jpeg', alt: 'ReStart Physio győri rendelő kezelőhelyisége', category: 'rendelő', title: '' },
+    { id: 7, src: '/rendelo7.jpeg', alt: 'ReStart Physio kezelőhelyiség panorámás kilátással Győrben', category: 'rendelő', title: '' },
+    { id: 8, src: '/rendelo8.jpeg', alt: 'ReStart Physio kezelőterem tornaszőnyegekkel és bordásfallal', category: 'rendelő', title: '' },
+    { id: 9, src: '/rendelo9.jpeg', alt: 'ReStart Physio tornaterem szobabiciklivel és rehab eszközökkel', category: 'rendelő', title: '' },
     
     // KEZELÉSEK - BEMER
-    { id: 10, src: '/bemer1.jpg', alt: 'ReStart Physio gyógytornász BEMER terápiát végez páciensen – gyorsabb regeneráció és rehabilitáció modern eszközzel Győrben.', category: 'kezelés', title: '' },
-    { id: 11, src: '/bemer2.jpg', alt: 'ReStart Physio Győr – BEMER terápia arckezelés közben, modern orvosi eszközzel végzett regeneráló kezelés a rendelőben.', category: 'kezelés', title: '' },
-    { id: 12, src: '/bemer3.jpg', alt: 'BEMER terápia vállkezelés a ReStart Physio gyógytorna rendelőben Győrben, fizikoterápiás regeneráció modern eszközzel.', category: 'kezelés', title: '' },
-    { id: 13, src: '/bemer4.jpg', alt: 'BEMER fizikai érterápia a ReStart Physio rendelőben – regeneráció és teljesítményfokozás sportolóknak Győrben.', category: 'kezelés', title: '' },
+    { id: 10, src: '/bemer1.jpg', alt: 'BEMER terápia páciensen – regeneráció modern eszközzel Győrben', category: 'kezelés', title: '' },
+    { id: 11, src: '/bemer2.jpg', alt: 'BEMER terápia arckezelés a ReStart Physio rendelőben Győrben', category: 'kezelés', title: '' },
+    { id: 12, src: '/bemer3.jpg', alt: 'BEMER vállkezelés a ReStart Physio rendelőben Győrben', category: 'kezelés', title: '' },
+    { id: 13, src: '/bemer4.jpg', alt: 'BEMER érterápia sportolóknak a ReStart Physio rendelőben', category: 'kezelés', title: '' },
     
     // MANUÁLIS KEZELÉSEK
-    { id: 14, src: '/manual2.jpg', alt: 'ReStart Physio gyógytornász manuális nyak- és vállkezelést végez páciensen – izomlazítás és fascia terápia Győrben.', category: 'kezelés', title: '' },
-    { id: 15, src: '/manual3.jpg', alt: 'ReStart Physio gyógytornász manuális nyak- és vállkezelést végez páciensen – izomlazítás és fascia terápia Győrben.', category: 'kezelés', title: '' },
-    { id: 16, src: '/manual4.jpg', alt: 'ReStart Physio fizioterapeuta manuális kezelést végez a nyak és váll területén, személyre szabott fájdalomcsillapító terápiával Győrben.', category: 'kezelés', title: '' },
+    { id: 14, src: '/manual2.jpg', alt: 'Manuális nyak- és vállkezelés – izomlazítás Győrben', category: 'kezelés', title: '' },
+    { id: 15, src: '/manual3.jpg', alt: 'Manuális fascia terápia nyak-váll területen Győrben', category: 'kezelés', title: '' },
+    { id: 16, src: '/manual4.jpg', alt: 'Személyre szabott manuális fájdalomcsillapítás Győrben', category: 'kezelés', title: '' },
     
     // SPORTREHABILITÁCIÓ
-    { id: 17, src: '/sportrehab1.jpg', alt: 'ReStart Physio gyógytornász sportrehabilitációs tréninget tart páciensének – egyensúlyfejlesztő és erősítő gyakorlat Győrben.', category: 'kezelés', title: '' },
-    { id: 18, src: '/sportrehab2.JPG', alt: 'ReStart Physio gyógytornász sportrehabilitációs gyakorlatot irányít – izomerősítés és mozgáskoordináció fejlesztés Győrben.', category: 'kezelés', title: '' },
-    { id: 19, src: '/sportrehab3.jpg', alt: 'ReStart Physio gyógytornász térderősítő sportrehabilitációs gyakorlatot felügyel – sérülés utáni regeneráció és izomerősítés Győrben.', category: 'kezelés', title: '' },
-    { id: 20, src: '/sportrehab4.jpg', alt: 'ReStart Physio gyógytornász térdrehabilitációs gyakorlatot végez páciensével gumiszalag segítségével – izomerősítés és stabilizációs tréning Győrben.', category: 'kezelés', title: '' },
+    { id: 17, src: '/sportrehab1.jpg', alt: 'Sportrehabilitációs egyensúlyfejlesztő gyakorlat Győrben', category: 'kezelés', title: '' },
+    { id: 18, src: '/sportrehab2.JPG', alt: 'Sportrehabilitáció – izomerősítés és koordináció Győrben', category: 'kezelés', title: '' },
+    { id: 19, src: '/sportrehab3.jpg', alt: 'Térderősítő sportrehabilitáció sérülés után Győrben', category: 'kezelés', title: '' },
+    { id: 20, src: '/sportrehab4.jpg', alt: 'Térdrehabilitáció gumiszalaggal – stabilizáció Győrben', category: 'kezelés', title: '' },
     
     // GERINCSTABILIZÁCIÓ
-    { id: 21, src: '/gerinc_core1.jpg', alt: 'ReStart Physio gyógytornász core-stabilizációs és törzserősítő gyakorlatot végeztet páciensével fitball labdán – gerinc- és izomerősítő tréning Győrben.', category: 'kezelés', title: '' },
-    { id: 22, src: '/gerinc_core2.jpg', alt: 'ReStart Physio gyógytornász core- és gerincstabilizáló gyakorlatot végeztet páciensével súlyzó és pilates labda segítségével – funkcionális tréning Győrben.', category: 'kezelés', title: '' },
-    { id: 23, src: '/gerinc_core3.jpg', alt: 'ReStart Physio gyógytornász core-stabilizációs és egyensúlyfejlesztő gyakorlatot irányít páciensének BOSU labdán – törzsizom erősítés és rehabilitáció Győrben.', category: 'kezelés', title: '' },
+    { id: 21, src: '/gerinc_core1.jpg', alt: 'Core-stabilizáció fitball labdán – gerincerősítés Győrben', category: 'kezelés', title: '' },
+    { id: 22, src: '/gerinc_core2.jpg', alt: 'Gerincstabilizáció súlyzóval és pilates labdával Győrben', category: 'kezelés', title: '' },
+    { id: 23, src: '/gerinc_core3.jpg', alt: 'Core-stabilizáció BOSU labdán – egyensúlyfejlesztés Győrben', category: 'kezelés', title: '' },
     
     // CSOPORTOS CORE
-    { id: 24, src: '/group_core1.jpg', alt: 'ReStart Physio csoportos core tréning gumiszalaggal – törzsizom erősítés, mobilizáció és nyújtás szakértő gyógytornász irányításával Győrben.', category: 'kezelés', title: '' },
-    { id: 25, src: '/group_core2.jpg', alt: 'ReStart Physio csoportos core-stabilizációs gyakorlat fitball-labdával – törzsizom erősítés és egyensúlyfejlesztés szakértő gyógytornász vezetésével Győrben.', category: 'kezelés', title: '' },
-    { id: 26, src: '/group_core3.jpg', alt: 'ReStart Physio csoportos core-stabilizációs gyakorlat a rendelőben – törzsizom erősítés, gerincvédelem és testtartásjavítás Győrben.', category: 'kezelés', title: '' },
-    { id: 27, src: '/group_core4.jpg', alt: 'ReStart Physio csoportos core tréning és nyújtás – testtartásjavító és mobilizáló gyakorlatok gyógytornász vezetésével Győrben.', category: 'kezelés', title: '' },
+    { id: 24, src: '/group_core1.jpg', alt: 'Csoportos core tréning gumiszalaggal Győrben', category: 'kezelés', title: '' },
+    { id: 25, src: '/group_core2.jpg', alt: 'Csoportos core-stabilizáció fitball-labdával Győrben', category: 'kezelés', title: '' },
+    { id: 26, src: '/group_core3.jpg', alt: 'Csoportos törzsizom erősítés a rendelőben Győrben', category: 'kezelés', title: '' },
+    { id: 27, src: '/group_core4.jpg', alt: 'Csoportos core tréning és nyújtás Győrben', category: 'kezelés', title: '' },
     
     // ÁLLKAPOCS TERÁPIA
-    { id: 28, src: '/allkapocs1.jpg', alt: 'ReStart Physio TMI terápia – állkapocs-ízületi manuálterápia gyógytornász által Győrben, fájdalomcsillapítás és izomlazítás céljából.', category: 'kezelés', title: '' },
-    { id: 29, src: '/allkapocs2.jpg', alt: 'ReStart Physio állkapocs-ízületi TMI manuálterápia Győrben – gyógytornász által végzett kezelés a rágóizmok és ízületi feszültség oldására.', category: 'kezelés', title: '' },
-    { id: 30, src: '/allkapocs3.jpg', alt: 'ReStart Physio TMI terápia – állkapocs-ízületi manuálterápia fekvő helyzetben, gyógytornász kezelésével Győrben a rágóizmok és ízületi feszültség oldására.', category: 'kezelés', title: '' },
-    { id: 31, src: '/allkapocs4.jpg', alt: 'ReStart Physio TMI terápia – állkapocs-ízületi manuálterápia szájüregen keresztül Győrben, a rágóizmok és ízületi blokkok oldására.', category: 'kezelés', title: '' },
+    { id: 28, src: '/allkapocs1.jpg', alt: 'TMI állkapocs-ízületi manuálterápia Győrben', category: 'kezelés', title: '' },
+    { id: 29, src: '/allkapocs2.jpg', alt: 'TMI terápia – rágóizom és ízületi feszültség oldása', category: 'kezelés', title: '' },
+    { id: 30, src: '/allkapocs3.jpg', alt: 'Állkapocs-ízületi kezelés fekvő helyzetben Győrben', category: 'kezelés', title: '' },
+    { id: 31, src: '/allkapocs4.jpg', alt: 'TMI manuálterápia szájüregen keresztül Győrben', category: 'kezelés', title: '' },
     
     // DYNAMIC TAPE
-    { id: 32, src: '/dynamictape1.jpg', alt: 'ReStart Physio Dynamic Tape ragasztás Győrben – modern kineziológiai taping technika a boka és az ízületek stabilizálására, sportrehabilitáció részeként.', category: 'kezelés', title: '' },
+    { id: 32, src: '/dynamictape1.jpg', alt: 'Dynamic Tape boka-stabilizálás sportrehabilitációhoz Győr', category: 'kezelés', title: '' },
   ];
 
   const categories = ['mind', 'rendelő', 'kezelés'];
@@ -230,7 +230,8 @@ export default function Galeria() {
                     width={800}
                     height={600}
                     className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
-                    unoptimized // ✅ FONTOS statikus exportnál!
+                    quality={75}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="text-center text-white p-4">
@@ -320,7 +321,7 @@ export default function Galeria() {
                       maxHeight: 'calc(100vh - 200px)',
                       maxWidth: 'calc(100vw - 16px)'
                     }}
-                    unoptimized // ✅ FONTOS!
+                    quality={85}
                   />
                 </div>
   

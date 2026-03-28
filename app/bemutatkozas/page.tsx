@@ -49,6 +49,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://restartphysio.hu/bemutatkozas',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: 'Forrás Fernanda gyógytornász-fizioterapeuta | ReStart Physio Győr',
     description: 'Bemutatkozik Forrás Fernanda, a ReStart Physio szakértő fizioterapeutája, több éves tapasztalattal a sport- és mozgásszervi rehabilitáció területén.',
